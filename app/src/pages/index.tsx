@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { NextPage } from 'next';
+import { Header } from '@src/components/molecules'
 import styles from '../styles/Home.module.css'
 
 const Home:NextPage = (): JSX.Element => {
@@ -11,6 +12,7 @@ const Home:NextPage = (): JSX.Element => {
       </Head>
 
       <main className={styles.main}>
+        <Header />
         <p>Hello GraphQL</p>
       </main>
 
