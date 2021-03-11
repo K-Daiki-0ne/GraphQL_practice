@@ -1,9 +1,22 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
+import { Item } from '@src/components/organisms';
+import { PostInterface } from '@src/interfaces/post.interface';
 
-export const Post:FC = (): JSX.Element => {
+
+interface Props {
+  props: PostInterface[]
+}
+
+export const Post:FC<Props> = ({ props }): JSX.Element => {
   return (
-    <div>
-
+    <div className='post'>
+      {
+        props.map(post => {
+          <div key={post.id}>
+            <Item />
+          </div>
+        })
+      }
     </div>
   )
 }
