@@ -13,7 +13,7 @@ export const Post:FC<Props> = ({ props }): JSX.Element => {
       {
         props.map(post => {
           <div key={post.id}>
-            <Item />
+            <Item props={post}/>
           </div>
         })
       }
