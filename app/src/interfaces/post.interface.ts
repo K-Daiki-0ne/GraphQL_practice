@@ -1,3 +1,5 @@
-export interface Post {
+export interface PostInterface {
   id: string
+  title: string
+  body: string
 }
