@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { NextPage } from 'next';
 import { Header } from '@src/components/molecules'
+import { Form } from '@src/components/organisms'
 import styles from '../styles/Home.module.scss'
 
 const About:NextPage = (): JSX.Element => {
@@ -14,7 +15,7 @@ const About:NextPage = (): JSX.Element => {
       <Header />
 
       <main className={styles.main}>
-        <p>About page</p>
+        <Form />
       </main>
 
       <footer className={styles.footer}>
