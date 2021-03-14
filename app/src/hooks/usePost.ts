@@ -23,5 +23,5 @@ export const usePost = (): PostInterface[] | undefined => {
       }
     }
   });
-  return data.posts.data;
+  return data?.posts?.data;
 }

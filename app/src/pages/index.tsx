@@ -4,16 +4,10 @@ import { Header } from '@src/components/molecules'
 import { PostInterface } from '@src/interfaces/post.interface';
 import { Post } from '@src/components/templates';
 import styles from '../styles/Home.module.scss'
-
+import { usePost } from '@src/hooks/usePost';
 
 const Home:NextPage = (): JSX.Element => {
-  const posts: PostInterface[] = [
-    {
-      id: "1",
-      title: "Post one",
-      body: "this is a post one item"
-    }
-  ];
+  const posts = usePost();
 
   return (
     <div className={styles.container}>
@@ -25,7 +19,7 @@ const Home:NextPage = (): JSX.Element => {
       <Header />
 
       <main className={styles.main}>
-        <Post props={posts} />
+        <Post props={posts || []} />
       </main>
 
       <footer className={styles.footer}>
