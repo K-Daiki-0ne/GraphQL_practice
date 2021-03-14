@@ -4,10 +4,10 @@ import { Header } from '@src/components/molecules'
 import { PostInterface } from '@src/interfaces/post.interface';
 import { Post } from '@src/components/templates';
 import styles from '../styles/Home.module.scss'
-import { usePost } from '@src/hooks/usePost';
+import { useGetPost } from '@src/hooks/useGetPost';
 
 const Home:NextPage = (): JSX.Element => {
-  const posts = usePost();
+  const posts = useGetPost();
 
   return (
     <div className={styles.container}>

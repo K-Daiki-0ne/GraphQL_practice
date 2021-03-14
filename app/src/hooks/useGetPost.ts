@@ -13,7 +13,7 @@ const GET_POST = gql`
   }
 `
 
-export const usePost = (): PostInterface[] | undefined => {
+export const useGetPost = (): PostInterface[] | undefined => {
   const { data } = useQuery(GET_POST, {
     variables: { 
       options: { 
