@@ -1,14 +1,10 @@
 import Head from 'next/head'
 import { NextPage } from 'next';
 import { Header } from '@src/components/molecules'
-import { PostInterface } from '@src/interfaces/post.interface';
-import { Post } from '@src/components/templates';
+import { Form } from '@src/components/organisms'
 import styles from '../styles/Home.module.scss'
-import { useGetPost } from '@src/hooks/useGetPost';
 
-const Home:NextPage = (): JSX.Element => {
-  const posts = useGetPost();
-
+const About:NextPage = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,7 +15,7 @@ const Home:NextPage = (): JSX.Element => {
       <Header />
 
       <main className={styles.main}>
-        <Post props={posts || []} />
+        <Form />
       </main>
 
       <footer className={styles.footer}>
@@ -29,4 +25,4 @@ const Home:NextPage = (): JSX.Element => {
   )
 }
 
-export default Home
+export default About
