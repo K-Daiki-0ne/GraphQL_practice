@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
+import { useCreatePost } from '@src/hooks/useCreatePost';
 import styles from './Form.module.scss';
 
 interface FormData {
@@ -8,10 +9,16 @@ interface FormData {
 }
 
 export const Form: FC = (): JSX.Element => {
-  const { register, handleSubmit } = useForm<FormData>()
+  const { register, handleSubmit } = useForm<FormData>();
+  const createPost = useCreatePost()
 
   const onSubmit = handleSubmit(({ title, body }) => {
-    console.log(title, body)
+    createPost({ variables: {
+      input: {
+        title, 
+        body
+      }}
+    })
   })
 
   return (
